@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Measurements',
             fields=[
-                ('mid', models.IntegerField(primary_key=True, serialize=False)),
+                ('obj', models.IntegerField(primary_key=True, serialize=False)),
                 ('mtype', models.TextField(blank=True, null=True)),
                 ('distance', models.DecimalField(blank=True, decimal_places=1, max_digits=5, null=True)),
                 ('gaiadistance', models.DecimalField(blank=True, decimal_places=2, max_digits=20, null=True)),
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Object',
             fields=[
-                ('oid', models.IntegerField(blank=True, primary_key=True, serialize=False)),
+                ('obj_id', models.IntegerField(blank=True, primary_key=True, serialize=False)),
                 ('name', models.TextField(blank=True, null=True)),
                 ('ra', models.DecimalField(blank=True, decimal_places=4, max_digits=10, null=True)),
                 ('dec', models.DecimalField(blank=True, decimal_places=4, max_digits=10, null=True)),
@@ -45,7 +45,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Observations',
             fields=[
-                ('obid', models.IntegerField(blank=True, primary_key=True, serialize=False)),
+                ('obj', models.IntegerField(blank=True, primary_key=True, serialize=False)),
                 ('followup', models.BooleanField(blank=True, null=True)),
                 ('candidates', models.IntegerField(blank=True, null=True)),
                 ('reductionnotes', models.TextField(blank=True, null=True)),

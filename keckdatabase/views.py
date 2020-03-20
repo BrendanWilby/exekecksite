@@ -30,9 +30,9 @@ class ObjectDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ObjectDetailView, self).get_context_data(**kwargs)
-        ob_id = self.kwargs['pk']
-        context['measurement'] = Measurements.objects.get(mid=ob_id)
-        context['observation'] = Observations.objects.get(obid=ob_id)
+        obj_id = self.kwargs['pk']
+        context['measurement'] = Measurements.objects.get(obj=obj_id)
+        context['observation'] = Observations.objects.get(obj=obj_id)
         context["list_page"] = "active"
 
         return context

@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('keckdatabase/admin/', admin.site.urls),
     path('keckdatabase/', include('keckdatabase.urls')),
     path('', RedirectView.as_view(url='/keckdatabase/', permanent=True)),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
